@@ -1,0 +1,32 @@
+<div id="users">
+  <article id="user-area">
+    <header>
+      <div class="main-header">
+        <div class="nav">
+          <a href="#main-nav" class="menu open-menu">☰</a>
+          <a href="#" class="menu close-menu">☰</a>
+        </div>
+        <div class="brand">
+          <a href="/"><%= Portfolio::Application.config.site_title %></a>
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="user-info">
+          <h1><%= h @user_name %></h1>
+          <p><%= simple_format(h @user.explain)%></p>
+        </div>
+      </div>
+
+      <div class="user-social">
+        <a href="#">Follow</a>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        sss
+      </div>
+    </section>
+  </article>
+
+</div>

@@ -32,8 +32,14 @@ body {
   height: 100%;
 }
 
+a { text-decoration: none; }
 .main-panel {
   color: #fff;
+  float: right;
+  width: 100%;
+  @include transition-duration(0.3s);
+  @include transition-timing-function(ease);
+
   h1 {
     font-size: 3.5em;
   }
@@ -43,6 +49,32 @@ body {
   }
 }
 
+.main-header {
+  width: 100%;
+  left: 0;
+  @include transition-duration(0.3s);
+  @include transition-timing-function(ease);
+
+  a.menu {
+    margin-left: 20px;
+    color: #333;
+    font-size: 32px;
+  }
+
+  
+}
+
+.nav {
+  float: left;
+}
+
+.brand {
+  margin-left: 100px;
+  font-size: 2.0em;
+  a {
+    text-decoration: none;
+  }
+}
 .container {
   width: 960px;
   margin: 0 auto;
@@ -71,6 +103,59 @@ body {
 }
 .sassy-button-green {
   @include sassy-button-gradient("glass", #8cbe5f);
+}
+
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #3B3B3B;
+  overflow: hidden;
+  @include transition-duration(0.3s);
+  @include transition-timing-function(ease);
+  a {
+    display: block;
+    background: linear-gradient(#3E3E3E, #383838);
+    border-top: 1px solid #484848;
+    border-bottom: 1px solid #2E2E2E;
+    color: white;
+    padding: 15px;
+    &:hover, &:focus {
+      background: linear-gradient(#484848, #383838);
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 34px;
+    background: linear-gradient(left, rgba(black, 0), rgba(black, 0.4));
+  }
+}
+
+.close-menu {
+  display: none;
+}
+
+#main-nav:target {
+  width: 20%;
+}
+#main-nav:target + .main-panel {
+  width: 80%;
+  .open-menu {
+     display: none; 
+  }
+  .close-menu {
+     display: block;
+  }
+  .main-header {
+    width: 80%;
+    left: 20%;
+  }
 }
 
 

@@ -1,29 +1,52 @@
 <div id="users">
   <section id="signin">
     <header>
-      <h2>ログイン</h2>
+      <div class="main-header">
+        <div class="nav">
+          <a href="#main-nav" class="menu open-menu">☰</a>
+          <a href="#" class="menu close-menu">☰</a>
+        </div>
+        <div class="brand">
+          <a href="/"><%= Portfolio::Application.config.site_title %></a>
+        </div>
+      </div>
+      <div class="container">
+        <h2>ログイン</h2>
+      </div>
     </header>
     <div class="container">
       <div class="inner">
         <div class="users-form">
-          <form action="/signin" method="post">
+          <%= form_for(@user, :url => {:action => 'signin'}) do |f| %>
+            <% if @user.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+                <ul>
+                <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
             <div class="field">
-              <label for="">メールアドレス or ユーザー名</label>
-              <input type="text" name="" value="">
+              <%= f.label :email, 'メールアドレス' %>
+              <%= f.text_field :email %>
             </div>
 
             <div class="field">
-              <label for="">パスワード</label>
-              <input type="password" name="" value="">
+              <%= f.label :password, 'パスワード' %>
+              <%= f.text_field :password %>
             </div>
 
             <div class="field">
               <p class="right"><a href="">パスワードを忘れた方</a></p>
               <button class="button sassy-button">ログイン</button>
             </div>
-          </form>
+          <% end %>
         </div>
       </div>
     </div>
   </section>
 </div>
+
