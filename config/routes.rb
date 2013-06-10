@@ -1,5 +1,10 @@
 Portfolio::Application.routes.draw do
-  get "users/new"
+  root :to => 'bases#index'
+
+  # users
+  match "/signup" => "users#signup"
+  match "/signin" => "users#signin"
+  match "/:user_name" => "users#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

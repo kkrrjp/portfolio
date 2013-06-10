@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <title><%= h @title%></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="main-panel">
+    <%= yield %>
 
-<%= yield %>
-
+    <%= render 'shared/footer' %>
+  </div>
 </body>
 </html>

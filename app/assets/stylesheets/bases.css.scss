@@ -1,0 +1,30 @@
+@import "compass/utilities";
+@import "compass/reset";
+@import "compass/css3";
+@import "sassy-buttons";
+
+#top {
+  background: {
+    color: #2F2F2F;
+    size: cover;
+  }
+
+  color: #fff;
+  padding: 50px 0 100px;
+}
+
+p.explain {
+  margin:10px 0 15px;
+  font-size: 1.8em;
+}
+
+ul.buttons {
+  margin: 15px 0 20px;
+  li {
+    padding: 8px;
+    a {
+      text-decoration: none;
+      width: 150px;
+    }
+  }
+}

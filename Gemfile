@@ -13,7 +13,12 @@ gem 'rails', '3.2.13'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'less-rails'
+  gem 'less-rails-bootstrap'
+  gem 'compass-colors'
+  gem 'compass-rails'
+  gem 'sassy-buttons'
+  gem 'zurui-sass-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

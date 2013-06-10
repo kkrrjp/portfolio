@@ -1,3 +1,71 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass/utilities";
+@import "compass/reset";
+@import "compass/css3";
+@import "sassy-buttons";
+
+#users {
+  background: {
+    color: #2F2F2F;
+    size: cover;
+  }
+
+  color: #fff;
+  padding: 0 0 100px;
+}
+
+header {
+  margin-bottom: 20px;
+  h2 {
+    text-align: center;
+    font-size: 2.0em;
+  }
+  padding: {
+    top: 30px;
+    bottom: 30px;
+  }
+  background: {
+    color: #fff;
+    size: cover;
+  }
+  color: #333;
+}
+
+.users-form {
+  @include border-radius(5px);
+  background-color: #fff;
+  padding: 15px;
+  width: 500px;
+  margin:0 auto;
+  &:after{
+    @include clearfix;
+  }
+
+  a {
+    text-decoration: underline;
+    color: #00B4FF;
+  }
+}
+
+form {
+  .field {
+    margin:10px 0;
+  }
+  width: 450px;
+  text-align: left;
+
+  label {
+    display: block;
+    color: #333;
+  }
+  input {
+    padding: 15px !important;
+    width: 100% !important;
+    font-size: 1.8em ;
+    @include border-radius(2px);
+  }
+
+  button {
+    cursor: pointer;
+    @include sassy-button("simple");
+  }
+}

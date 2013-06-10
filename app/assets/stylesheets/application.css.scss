@@ -1,0 +1,90 @@
+
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@import "compass/utilities";
+@import "compass/reset";
+@import "compass/css3";
+@import "sassy-buttons";
+@import "blueprint/form";
+
+@include global-reset;
+
+body {
+  background: #2F2F2F;
+  font: {
+    family: 'Lucida Grande', Arial, sans-serif;
+    size: 12px;
+  }
+  height: 100%;
+}
+
+.main-panel {
+  color: #fff;
+  h1 {
+    font-size: 3.5em;
+  }
+
+  &:after{
+    @include clearfix;
+  }
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+}
+
+.inner {
+  text-align: center;
+}
+
+.right {
+  float: right;
+}
+.button {
+  color: #fff;
+  font-size: 20px;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  @include border-radius(50px);
+}
+.sassy-button-blue {
+  @include sassy-button-gradient("simple", #4d8ccd);
+}
+.sassy-button-green {
+  @include sassy-button-gradient("glass", #8cbe5f);
+}
+
+
+form {
+  @include blueprint-form-layout;
+  @include blueprint-form-borders;
+  @include blueprint-form-sizes;
+}
+
+.g-footer {
+  @include single-box-shadow;
+  border-top: 1px solid #121212;
+  padding: 15px;
+  &:after{
+    @include clearfix;
+  }
+}
