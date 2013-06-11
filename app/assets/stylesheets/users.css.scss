@@ -5,16 +5,15 @@
 
 #users {
   background: {
-    color: #2F2F2F;
+    color: #fff;
     size: cover;
   }
 
   color: #fff;
-  padding: 0 0 100px;
+  padding: 0;
 }
 
 header {
-  margin-bottom: 20px;
   h2 {
     text-align: center;
     font-size: 2.0em;
@@ -23,12 +22,24 @@ header {
     top: 30px;
   }
   background: {
-    color: #fff;
+    color: #2F2F2F;
     size: cover;
   }
-  color: #333;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
 }
 
+h2.title {
+  font:{ 
+    size: 35px;
+    weight: bold;
+  }
+  color: #222;
+  padding-bottom: 25px;
+}
 .users-form {
   @include border-radius(5px);
   background-color: #fff;
@@ -70,6 +81,10 @@ form {
   }
 }
 
+.column {
+  width: 920px;
+}
+
 $default-text-shadow-color: rgba(#999, 0.6);
 $default-text-shadow-blur: 10px;
 $default-text-shadow-v-offset: 5px;
@@ -89,4 +104,71 @@ $default-text-shadow-v-offset: 5px;
   a {
     color: #fff;
   }
+}
+
+.user-explain {
+  background-color: #00B4FF;
+  padding: 30px 0;
+}
+
+.user-skills {
+  background-color: #2980B9;
+  padding: 30px 0;
+}
+
+.user_tag {
+  background: #fff;
+  color: #333;
+  padding: 3px 6px;
+  @include border-radius(2px);
+  margin-right: 5px;
+}
+
+.user-project {
+  background: #ECF0F1;
+  padding: 30px 0;
+}
+
+.user-timeline {
+  background: #e9eaed;
+  padding: 30px 0;
+}
+
+.timeline-contents {
+  background: #fff;
+  padding: 5px 10px;
+  
+  margin-left: 40px;
+  width: 70%;
+  color: #333;
+  @include border-radius(2px);
+  @include single-box-shadow(#888,0px,1px,4px,-1px);
+
+  h3 {
+    font: {
+      size: 24px;
+      weight: bold;
+    }
+  }
+
+  div {
+    margin-top: 8px;
+    font-size: 18px;
+  }
+
+  footer {
+    text-align: right;
+    margin-top: 8px;
+    font-size: 11px;
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+}
+
+.new-button {
+  text-align: right;
+  margin-bottom: 8px;
+  width: 93%;
 }

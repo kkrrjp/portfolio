@@ -10,7 +10,7 @@
           <a href="/"><%= Portfolio::Application.config.site_title %></a>
         </div>
       </div>
-      
+
       <div class="container">
         <div class="user-info">
           <h1><%= h @user_name %></h1>
@@ -22,11 +22,53 @@
         <a href="#">Follow</a>
       </div>
     </header>
-    <section>
+
+    <div class="user-explain">
       <div class="container">
         <%= simple_format(h @user.explain)%>
       </div>
-    </section>
+    </div>
+
+    <div class="user-skills">
+      <div class="container">
+        <div class="column">
+          <span class="user_tag">ruby on rails</span>
+          <span class="user_tag">html5</span>
+          <span class="user_tag">css3</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-project">
+      <div class="container">
+        <h2 class="title">プロジェクト</h2>
+      </div>
+    </div>
+
+    <div class="user-timeline">
+      <div class="container">
+        <h2 class="title">タイムライン</h2>
+
+        <div class="new-button">
+          <a href="" class="button sassy-button-blue">新規作成</a>
+        </div>
+
+        <section class="timeline-contents">
+          <h3>hogehoge</h3>
+          <div>
+            <%= simple_format("hogehoge, hoge
+
+            hogehogehoge
+            hogehogehoge"
+            ) %>
+          </div>
+          <footer>
+            <span>2013-06-11 作成</span> / <a href="">編集</a>
+          </footer>
+        </section>
+      </div>
+    </div>
+
   </article>
 
 </div>
