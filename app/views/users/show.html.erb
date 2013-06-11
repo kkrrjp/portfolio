@@ -14,7 +14,7 @@
       <div class="container">
         <div class="user-info">
           <h1><%= h @user_name %></h1>
-          <p><%= simple_format(h @user.explain)%></p>
+          <p></p>
         </div>
       </div>
 
@@ -24,7 +24,7 @@
     </header>
     <section>
       <div class="container">
-        sss
+        <%= simple_format(h @user.explain)%>
       </div>
     </section>
   </article>

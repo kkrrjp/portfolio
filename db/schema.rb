@@ -15,17 +15,14 @@ ActiveRecord::Schema.define(:version => 20130607102106) do
 
   create_table "users", :force => true do |t|
     t.string   "name",                                   :null => false
-    t.string   "email",                                  :null => false
-    t.string   "password",                               :null => false
     t.string   "nickname",                               :null => false
     t.string   "thumb"
-    t.text     "explain"
+    t.string   "explain"
     t.integer  "delflg",     :limit => 1, :default => 0, :null => false
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
 
-  add_index "users", ["delflg", "email", "password"], :name => "idx_mix2"
   add_index "users", ["delflg", "name"], :name => "idx_mix1"
 
 end

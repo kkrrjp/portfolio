@@ -30,6 +30,10 @@ gem 'mysql2'
 gem 'execjs'
 gem 'therubyracer'
 
+group :test do
+  gem 'rspec-rails', '2.11.0'
+end
+
 group :development do
   gem 'thin'
   gem 'capistrano'
