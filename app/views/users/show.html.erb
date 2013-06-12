@@ -2,10 +2,7 @@
   <article id="user-area">
     <header>
       <div class="main-header">
-        <div class="nav">
-          <a href="#main-nav" class="menu open-menu">☰</a>
-          <a href="#" class="menu close-menu">☰</a>
-        </div>
+        <%= render 'shared/nav' %>
         <div class="brand">
           <a href="/"><%= Portfolio::Application.config.site_title %></a>
         </div>
@@ -49,9 +46,11 @@
       <div class="container">
         <h2 class="title">タイムライン</h2>
 
+        <% if signed_in? && current_user?(@user) %>
         <div class="new-button">
           <a href="" class="button sassy-button-blue">新規作成</a>
         </div>
+        <% end %>
 
         <section class="timeline-contents">
           <h3>hogehoge</h3>
@@ -63,7 +62,7 @@
             ) %>
           </div>
           <footer>
-            <span>2013-06-11 作成</span> / <a href="">編集</a>
+            <span>2013-06-11 作成</span><% if signed_in? && current_user?(@user) %> / <a href="">編集</a><% end %>
           </footer>
         </section>
       </div>

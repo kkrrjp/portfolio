@@ -1,19 +1,19 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to "/#{current_user.name}" if signed_in?
     @user = User.new
-puts @user
     @title = "ログイン - #{Portfolio::Application.config.site_title}"
   end
 
   def create
-puts params
     @user = User.find(:first,
-                     :conditions=>["delflg=? and email=? and password=?",
-                                     0,params[:user][:email],params[:user][:password]
+                     :conditions=>["delflg=? and email=?",
+                                     0,params[:user][:email]
                                  ]
                    )
-    if @user && @user.authenticate(params[:session][:password])
-
+    if @user && @user.authenticate(params[:user][:password])
+      sign_in @user
+      redirect_to "/#{@user.name}"
     else
       flash[:error] = 'Invalid email/password combination'
       render 'new'
@@ -22,6 +22,7 @@ puts params
   end
 
   def destroy
-    
+    sign_out
+    redirect_to root_url
   end
 end

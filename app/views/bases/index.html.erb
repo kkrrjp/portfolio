@@ -6,12 +6,18 @@
         <p class="explain"><%= @test %></p>
 
         <ul class="buttons">
+          <% if !signed_in? %>
           <li>
             <a href="/signup" class="button sassy-button-green">登録</a>
           </li>
           <li>
             <a href="/signin" class="button sassy-button-blue">サインイン</a>
           </li>
+          <% else %>
+          <li>
+            <a href="/<%= current_user.name%>" class="button sassy-button-blue">あなたのポートフォリオ</a>
+          </li>
+          <% end %>
           <li class="tiny_heading_sub">
             <a href="/sample">>>ポートフォリオのサンプルページ</a>
           </li>

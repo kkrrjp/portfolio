@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
 
   before_save { |user| user.email = email.downcase }
-  #before_save :create_remember_token
+  before_save :create_remember_token
 
   after_validation { self.errors.messages.delete(:password_digest) }
 

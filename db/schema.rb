@@ -11,22 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612022150) do
+ActiveRecord::Schema.define(:version => 20130612065824) do
 
   create_table "users", :force => true do |t|
-    t.string   "name",                                   :null => false
-    t.string   "email",                                  :null => false
-    t.string   "digest",                                 :null => false
-    t.string   "nickname",                               :null => false
+    t.string   "name",                                        :null => false
+    t.string   "email",                                       :null => false
+    t.string   "password_digest",                             :null => false
+    t.string   "nickname",                                    :null => false
     t.string   "thumb"
     t.text     "explain"
-    t.integer  "delflg",     :limit => 1, :default => 0, :null => false
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.integer  "delflg",          :limit => 1, :default => 0, :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+    t.string   "remember_token"
   end
 
-  add_index "users", ["delflg", "email", "digest"], :name => "idx_mix2"
+  add_index "users", ["delflg", "email", "password_digest"], :name => "idx_mix2"
   add_index "users", ["delflg", "name"], :name => "idx_mix1"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end

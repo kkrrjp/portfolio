@@ -10,10 +10,16 @@
 <body>
   <%= render 'shared/main_nav' %>
   <div class="main-panel">
+    <%# flash.each do |key, value| %>
+      <%#= content_tag(:div, value, class: "alert alert-#{key}") %>
+    <%# end %>
     <%= yield %>
 
     <%= render 'shared/footer' %>
     <%= debug(params) if Rails.env.development? %>
+    <%= signed_in? if Rails.env.development? %>
+    <%= cookies[:remember_token] if Rails.env.development? %>
+    
   </div>
 </body>
 </html>

@@ -1,10 +1,11 @@
 <nav class="main-nav" id="main-nav">
-  <%# if params[:controller] == "users" && params[:action] == "show"  %>
   <a href="/">Home</a>
-  <a href="#">Little</a>
-  <a href="#">Piggy</a>
-  <a href="#">Went</a>
-  <a href="#">To</a>
-  <a href="#">Market</a>
-  <%# end %>
+  <% if !signed_in? %>
+  <a href="/signup">新規登録</a>
+  <a href="/signin">サインイン</a>
+  <% else %>
+  <a href="/<%= current_user.name%>">ポートフォリオ</a>
+  <a href="/setting">Setting</a>
+  <%= link_to "サインアウト", signout_path, method: "delete" %>
+  <% end %>
 </nav>
