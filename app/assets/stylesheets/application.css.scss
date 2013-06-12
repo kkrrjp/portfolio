@@ -158,6 +158,17 @@ a { text-decoration: none; }
   }
 }
 
+.alert {
+  padding:10px 15px;
+  margin: 10px 0 10px;
+  @include border-radius(2px);
+}
+
+.alert-error {
+  color: #b94a48;
+  background: #f2dede;
+  border-color: #eed3d7;
+}
 
 form {
   @include blueprint-form-layout;

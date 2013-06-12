@@ -1,9 +1,21 @@
 Portfolio::Application.routes.draw do
   root :to => 'bases#index'
 
+  resources :users do
+    member do
+      #get :following, :followers
+    end
+  end
+  # users  
+  match "/signup", to: "users#signup"
+  
+  # sessions
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match "/signin" ,to:"sessions#new"
+  match "/signout",to:"sessions#destroy", via: :delete
+  
   # users
-  match "/signup" => "users#signup"
-  match "/signin" => "users#signin"
   match "/:user_name" => "users#show"
 
   # The priority is based upon order of creation:
