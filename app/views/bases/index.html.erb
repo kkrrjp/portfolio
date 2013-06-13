@@ -3,7 +3,13 @@
     <div class="container">
       <div class="inner">
         <h1><%= Portfolio::Application.config.site_title%></h1>
-        <p class="explain"><%= @test %></p>
+        <div class="explain">
+          <h2>同人活動をしている個人、サークルの人々のスペースです。</h2>
+
+          <p>あなた方の作品、活動履歴などをポートフォリオに</p>
+          <p>披露してみんなに知ってもらおう。</p>
+
+        </div>
 
         <ul class="buttons">
           <% if !signed_in? %>

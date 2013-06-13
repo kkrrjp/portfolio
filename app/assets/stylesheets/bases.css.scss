@@ -13,9 +13,13 @@
   padding: 50px 0 100px;
 }
 
-p.explain {
+.explain {
   margin:10px 0 15px;
   font-size: 1.8em;
+  h2 {
+    font-size: 1.9em;
+    margin-bottom: 12px;
+  }
 }
 
 ul.buttons {
@@ -24,7 +28,7 @@ ul.buttons {
     padding: 8px;
     a {
       text-decoration: none;
-      width: 150px;
+      width: 200px;
     }
   }
 }

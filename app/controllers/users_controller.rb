@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     @user_name = params[:user_name]
     @user = User.find(:first, :conditions=>["delflg=? and name=?",0, @user_name])
-    raise 404 if @user.nil?
+raise if @user.nil?
     @title = "#{@user_name} - #{Portfolio::Application.config.site_title}"
   end
 
