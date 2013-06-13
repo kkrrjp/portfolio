@@ -39,6 +39,9 @@ end
 group :development do
   gem 'thin'
   gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'capistrano_colors'
+  gem 'rvm-capistrano'
 end
 
 group :production do
