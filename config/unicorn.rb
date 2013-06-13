@@ -8,7 +8,7 @@ worker_processes 1;
 timeout 30
 preload_app true
 
-shared_path = "/home/mrsk/htdocs_r/#{application}"
+shared_path = "/home/mrsk/htdocs_r/portfolio/#{application}/shared"
 stderr_path "#{shared_path}/log/unicorn.stderr.log"
 stdout_path "#{shared_path}/log/unicorn.stdout.log"
 
