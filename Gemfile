@@ -42,6 +42,7 @@ group :development do
   gem 'capistrano-ext'
   gem 'capistrano_colors'
   gem 'rvm-capistrano'
+  gem 'unicorn'
 end
 
 group :production do
